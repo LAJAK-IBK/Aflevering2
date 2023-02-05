@@ -1,0 +1,52 @@
+﻿@page
+@model Aflevering2.Pages.Dashboard.InfoCompanysModel
+@{
+    ViewData["Title"] = "Mere info...";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company.CvrNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.CvrNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.Address)
+        </dd>
+        <dt>
+            <p class="col-sm-2">Den aktuelle Smiley</p>
+            <br />
+        </dt>
+        <dd>
+            <img src="~/images/@Model.Company.ListOfReports[0].SmileyPath" alt="@Model.Company.ListOfReports[0].SmileyName">
+        </dd>
+        <dt>
+            <p class="col-sm-2">De forgående Smileys</p>
+            <br />
+        </dt>
+        <dd>
+            <img src="~/images/@Model.Company.ListOfReports[1].SmileyPath" alt="@Model.Company.ListOfReports[1].SmileyName" class="smileysmall">
+            <img src="~/images/@Model.Company.ListOfReports[2].SmileyPath" alt="@Model.Company.ListOfReports[2].SmileyName" class="smileysmall">
+            <img src="~/images/@Model.Company.ListOfReports[3].SmileyPath" alt="@Model.Company.ListOfReports[3].SmileyName" class="smileysmall">
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Company.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

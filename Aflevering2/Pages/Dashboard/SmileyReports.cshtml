@@ -1,0 +1,53 @@
+﻿@page
+@model Aflevering2.Pages.Dashboard.SmileyReportsModel
+@{
+    ViewData["Title"] = "SmileyReports";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].ReportDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].SmileyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].SmileyPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].CompanyId)
+            </th>
+            <th>Smiley</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Report)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SmileyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SmileyPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyId)
+                </td>
+                <td>
+                    <img src="~/images/@item.SmileyPath" alt="@item.SmileyName" class="smileysmall">
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
