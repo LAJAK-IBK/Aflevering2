@@ -1,4 +1,4 @@
-//using Aflevering2.Data;
+using Aflevering2.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,9 +20,8 @@ namespace Aflevering2
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
+                SeedData.Initialize(services);
 
-                //SeedData.Initialize(services);
-                
             }
             host.Run();
         }
